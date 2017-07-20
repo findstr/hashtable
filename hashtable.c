@@ -167,7 +167,6 @@ hash_foreach(struct hash_table *hash, hash_iter_t iter)
 struct hash_table *
 hash_create(int presize)
 {
-	int i;
 	struct hash_table *hash = my_malloc(sizeof(*hash));
 	hash_createslot(hash, presize);
 	return hash;
