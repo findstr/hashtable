@@ -151,7 +151,7 @@ hash_set(struct hash_table *hash, int id, void *obj)
 }
 
 void
-hash_foreach(struct hash_table *hash, hash_iter_t iter)
+hash_foreach(struct hash_table *hash, hash_iter_t iter, void *ud)
 {
 	int i;
 	int size = hash->cap;
@@ -159,7 +159,7 @@ hash_foreach(struct hash_table *hash, hash_iter_t iter)
 	for (i = 0; i < size; i++) {
 		if (slot[i].id == -1)
 			continue;
-		iter(slot[i].id, slot[i].obj);
+		iter(slot[i].id, slot[i].obj, ud);
 	}
 	return ;
 }

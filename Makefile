@@ -3,7 +3,7 @@
 all:testhash
 
 testhash:hashtable.c testhash.c
-	gcc -g -o $@ $^
+	gcc -Wall -g -o $@ $^
 
 clean:
 	rm testhash
